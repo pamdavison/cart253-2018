@@ -7,11 +7,11 @@
 // One moves toward the mouse cursor.
 
 
-// The image of a clown face
-var clownImage;
-// The current position of the clown face
-var clownImageX;
-var clownImageY;
+//The image of a blue circle
+var pamCircleImage;
+//The current position of the blue cirle
+var pamCircleImageX;
+var pamCircleImageY;
 
 // The transparent image of "felt" that wipes down the canvas
 var feltTextureImage;
@@ -25,8 +25,8 @@ var feltTextureImageY;
 // Load the two images we're using before the program starts
 
 function preload() {
-  clownImage = loadImage("assets/images/clown.png");
-  feltTextureImage = loadImage("assets/images/black-felt-texture.png");
+  feltTextureImage = loadImage("assets/images/pamrectangle.jpg");
+  pamCircleImage = loadImage ("assets/images/pan_blue_circle.png");
 }
 
 
@@ -38,13 +38,15 @@ function setup() {
   // Create our canvas
   createCanvas(640,640);
 
-  // Start the clown image at the centre of the canvas
-  clownImageX = width/2;
-  clownImageY = height/2;
 
-  // Start the felt image perfectly off screen above the canvas
-  feltTextureImageX = width/2;
-  feltTextureImageY = 0 - feltTextureImage.height/2;
+  //Start the blue circle image at the centre of the createCanvas
+  pamCircleImage = width/2;
+  pamCircleImage = height/2;
+
+
+  // Start the felt image perfectly off screen to the left of the canvas
+  feltTextureImageY = width/2;
+  feltTextureImageX = 0 - feltTextureImage.height/2;
 
   // We'll use imageMode CENTER for this script
   imageMode(CENTER);
@@ -58,21 +60,23 @@ function setup() {
 
 function draw() {
 
-  // Move the felt image down by increasing its y position
-  feltTextureImageY += 1;
+  // Move the felt image right by increasing its y position
+  feltTextureImageX += 1;
 
   // Display the felt image
   image(feltTextureImage,feltTextureImageX,feltTextureImageY);
 
-  // Move the clown by moving it 1/10th of its current distance from the mouse
 
-  // Calculate the distance in X and in Y
-  var xDistance = mouseX - clownImageX;
-  var yDistance = mouseY - clownImageY;
-  // Add 1/10th of the x and y distance to the clown's current (x,y) location
-  clownImageX = clownImageX + xDistance/10;
-  clownImageY = clownImageY + yDistance/10;
 
-  // Display the clown image
-  image(clownImage,clownImageX,clownImageY);
+  //Move the blue circle by moving it 1/12th of its current distance from the mouse
+
+  //Calculate the distance in X and in Y
+  var xDistance = mouseX - pamCircleImageX;
+  var yDistance = mouseY - pamCircleImageY;
+  //Add 1/12th of the x and y distance to the circle's current (x,y) location
+  pamCircleImageX = pamCircleImageX + xDistance/12;
+  pamCircleImageY = pamCircleImageY + yDistance/12;
+
+  //Display the circle images
+  image(pamCircleImage,pamCircleImageX,pamCircleImageY);
 }
