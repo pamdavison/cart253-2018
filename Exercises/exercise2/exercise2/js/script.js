@@ -144,12 +144,12 @@ function draw() {
 
   // The player is black
   fill(0);
-  // Draw the player as a circle
-  ellipse(avatarX,avatarY,avatarSize,avatarSize);
+  // Draw the player as a circle (changed to square)
+  rect(avatarX,avatarY,avatarSize,avatarSize);
 
   // The enemy is red
   fill(255,0,0);
-  // Draw the enemy as a circle
-  ellipse(enemyX,enemyY,enemySize,enemySize);
+  // Draw the enemy as a circle (change to circle)
+  rect(enemyX,enemyY,enemySize,enemySize);
 
 }
