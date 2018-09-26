@@ -131,6 +131,12 @@ function draw() {
     dodges = dodges + 1;
     // Tell them how many dodges they have made
     console.log(dodges + " DODGES!");
+    //Tell them how many dodges they have made in the game
+    textAlign (BOTTOM, LEFT);
+    var NumberOfDodges = (dodges + "DODGES");
+    textFont ("Courier");
+    textSize (64);
+    text (DODGES, width/2, height/2);
     // Reset the enemy's position to the left at a random height
     enemyX = 0;
     enemyY = random(0,height);
