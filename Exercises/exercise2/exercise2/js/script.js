@@ -110,6 +110,12 @@ function draw() {
     avatarY = height/2;
     // Reset the dodge counter
     dodges = 0;
+    //Reset the background color randomly
+    var colors = ['255', '204', '100'];
+    //select random color
+    var color = random(colors);
+    //draw the background
+    background(color);
   }
 
   // Check if the avatar has gone off the screen (cheating!)
